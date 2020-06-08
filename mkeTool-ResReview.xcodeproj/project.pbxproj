@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		936ED72C248E949200DE1631 /* CoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED72B248E949200DE1631 /* CoreData.swift */; };
+		936ED72E248E95AA00DE1631 /* CoreDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED72D248E95AA00DE1631 /* CoreDataSource.swift */; };
+		936ED730248E991200DE1631 /* ResturantType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED72F248E991200DE1631 /* ResturantType.swift */; };
+		936ED73E248E9B5B00DE1631 /* ResturantTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED73D248E9B5B00DE1631 /* ResturantTypeTests.swift */; };
+		936ED740248EAE0000DE1631 /* Resturant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED73F248EAE0000DE1631 /* Resturant.swift */; };
+		936ED742248EAF0200DE1631 /* ResturantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED741248EAF0200DE1631 /* ResturantTests.swift */; };
+		936ED750248EB60100DE1631 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED74F248EB60100DE1631 /* Review.swift */; };
+		936ED752248EB88C00DE1631 /* ReviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED751248EB88C00DE1631 /* ReviewTests.swift */; };
 		93AD6B7D2489ACFC002E810C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AD6B7C2489ACFC002E810C /* AppDelegate.swift */; };
 		93AD6B7F2489ACFC002E810C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AD6B7E2489ACFC002E810C /* SceneDelegate.swift */; };
 		93AD6B822489ACFC002E810C /* mkeTool_ResReview.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 93AD6B802489ACFC002E810C /* mkeTool_ResReview.xcdatamodeld */; };
@@ -14,7 +22,6 @@
 		93AD6B862489ACFF002E810C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93AD6B852489ACFF002E810C /* Assets.xcassets */; };
 		93AD6B892489ACFF002E810C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 93AD6B882489ACFF002E810C /* Preview Assets.xcassets */; };
 		93AD6B8C2489ACFF002E810C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 93AD6B8A2489ACFF002E810C /* LaunchScreen.storyboard */; };
-		93AD6B972489ACFF002E810C /* mkeTool_ResReviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AD6B962489ACFF002E810C /* mkeTool_ResReviewTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +35,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		936ED72B248E949200DE1631 /* CoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreData.swift; sourceTree = "<group>"; };
+		936ED72D248E95AA00DE1631 /* CoreDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataSource.swift; sourceTree = "<group>"; };
+		936ED72F248E991200DE1631 /* ResturantType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantType.swift; sourceTree = "<group>"; };
+		936ED73D248E9B5B00DE1631 /* ResturantTypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantTypeTests.swift; sourceTree = "<group>"; };
+		936ED73F248EAE0000DE1631 /* Resturant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resturant.swift; sourceTree = "<group>"; };
+		936ED741248EAF0200DE1631 /* ResturantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantTests.swift; sourceTree = "<group>"; };
+		936ED74F248EB60100DE1631 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		936ED751248EB88C00DE1631 /* ReviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTests.swift; sourceTree = "<group>"; };
 		93AD6B792489ACFC002E810C /* mkeTool-ResReview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mkeTool-ResReview.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93AD6B7C2489ACFC002E810C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93AD6B7E2489ACFC002E810C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +53,6 @@
 		93AD6B8B2489ACFF002E810C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		93AD6B8D2489ACFF002E810C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		93AD6B922489ACFF002E810C /* mkeTool-ResReviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mkeTool-ResReviewTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		93AD6B962489ACFF002E810C /* mkeTool_ResReviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mkeTool_ResReviewTests.swift; sourceTree = "<group>"; };
 		93AD6B982489ACFF002E810C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,13 +95,11 @@
 		93AD6B7B2489ACFC002E810C /* mkeTool-ResReview */ = {
 			isa = PBXGroup;
 			children = (
-				93AD6B7C2489ACFC002E810C /* AppDelegate.swift */,
-				93AD6B7E2489ACFC002E810C /* SceneDelegate.swift */,
-				93AD6B832489ACFC002E810C /* ContentView.swift */,
+				93AD6BA12489AD17002E810C /* _Main */,
+				93AD6BA22489AD36002E810C /* Core Data */,
+				93AD6BA32489AD45002E810C /* Views */,
 				93AD6B852489ACFF002E810C /* Assets.xcassets */,
-				93AD6B8A2489ACFF002E810C /* LaunchScreen.storyboard */,
 				93AD6B8D2489ACFF002E810C /* Info.plist */,
-				93AD6B802489ACFC002E810C /* mkeTool_ResReview.xcdatamodeld */,
 				93AD6B872489ACFF002E810C /* Preview Content */,
 			);
 			path = "mkeTool-ResReview";
@@ -104,10 +116,43 @@
 		93AD6B952489ACFF002E810C /* mkeTool-ResReviewTests */ = {
 			isa = PBXGroup;
 			children = (
-				93AD6B962489ACFF002E810C /* mkeTool_ResReviewTests.swift */,
+				936ED741248EAF0200DE1631 /* ResturantTests.swift */,
+				936ED73D248E9B5B00DE1631 /* ResturantTypeTests.swift */,
+				936ED751248EB88C00DE1631 /* ReviewTests.swift */,
 				93AD6B982489ACFF002E810C /* Info.plist */,
 			);
 			path = "mkeTool-ResReviewTests";
+			sourceTree = "<group>";
+		};
+		93AD6BA12489AD17002E810C /* _Main */ = {
+			isa = PBXGroup;
+			children = (
+				93AD6B7C2489ACFC002E810C /* AppDelegate.swift */,
+				93AD6B7E2489ACFC002E810C /* SceneDelegate.swift */,
+				93AD6B8A2489ACFF002E810C /* LaunchScreen.storyboard */,
+			);
+			path = _Main;
+			sourceTree = "<group>";
+		};
+		93AD6BA22489AD36002E810C /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				93AD6B802489ACFC002E810C /* mkeTool_ResReview.xcdatamodeld */,
+				936ED72B248E949200DE1631 /* CoreData.swift */,
+				936ED72D248E95AA00DE1631 /* CoreDataSource.swift */,
+				936ED73F248EAE0000DE1631 /* Resturant.swift */,
+				936ED72F248E991200DE1631 /* ResturantType.swift */,
+				936ED74F248EB60100DE1631 /* Review.swift */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		93AD6BA32489AD45002E810C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				93AD6B832489ACFC002E810C /* ContentView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,7 +257,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				93AD6B7D2489ACFC002E810C /* AppDelegate.swift in Sources */,
+				936ED730248E991200DE1631 /* ResturantType.swift in Sources */,
+				936ED740248EAE0000DE1631 /* Resturant.swift in Sources */,
+				936ED72C248E949200DE1631 /* CoreData.swift in Sources */,
+				936ED750248EB60100DE1631 /* Review.swift in Sources */,
 				93AD6B822489ACFC002E810C /* mkeTool_ResReview.xcdatamodeld in Sources */,
+				936ED72E248E95AA00DE1631 /* CoreDataSource.swift in Sources */,
 				93AD6B842489ACFC002E810C /* ContentView.swift in Sources */,
 				93AD6B7F2489ACFC002E810C /* SceneDelegate.swift in Sources */,
 			);
@@ -222,7 +272,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				93AD6B972489ACFF002E810C /* mkeTool_ResReviewTests.swift in Sources */,
+				936ED752248EB88C00DE1631 /* ReviewTests.swift in Sources */,
+				936ED742248EAF0200DE1631 /* ResturantTests.swift in Sources */,
+				936ED73E248E9B5B00DE1631 /* ResturantTypeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +539,7 @@
 			currentVersion = 93AD6B812489ACFC002E810C /* mkeTool_ResReview.xcdatamodel */;
 			path = mkeTool_ResReview.xcdatamodeld;
 			sourceTree = "<group>";
+			usesTabs = 0;
 			versionGroupType = wrapper.xcdatamodel;
 		};
 /* End XCVersionGroup section */
