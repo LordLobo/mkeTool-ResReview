@@ -12,12 +12,13 @@
     </entity>
     <entity name="Review" representedClassName="Review" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="rating" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="review" optional="YES" attributeType="String"/>
         <relationship name="resturant" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Resturant" inverseName="reviews" inverseEntity="Resturant"/>
     </entity>
     <elements>
         <element name="Resturant" positionX="-204.78515625" positionY="229.890625" width="128" height="103"/>
         <element name="ResturantType" positionX="2.40625" positionY="266.34375" width="128" height="73"/>
-        <element name="Review" positionX="-461.0859375" positionY="218.625" width="128" height="88"/>
+        <element name="Review" positionX="-461.0859375" positionY="218.625" width="128" height="103"/>
     </elements>
 </model>

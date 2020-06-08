@@ -25,9 +25,10 @@ public class Review: NSManagedObject {
         return Review(context: CoreData.stack.context)
     }
     
-    class func createReviewFor(_ resturant: Resturant, text: String) -> Review {
+    class func createReviewFor(_ resturant: Resturant, text: String, rating: Int) -> Review {
         let new = Review.newReview()
         new.review = text
+        new.rating = Int16(rating)
         new.resturant = resturant
         new.date = Date.init()
         
@@ -48,5 +49,6 @@ extension Review {
 
     @NSManaged public var date: Date?
     @NSManaged public var review: String?
+    @NSManaged public var rating: Int16
     @NSManaged public var resturant: Resturant?
 }

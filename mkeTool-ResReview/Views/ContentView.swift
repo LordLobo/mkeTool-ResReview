@@ -9,6 +9,10 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var editMode: EditMode = .inactive
+    
+    @ObservedObject private var dataSource = CoreDataSource<Resturant>()
+    
     var body: some View {
         Text("Hello, World!")
     }
