@@ -12,8 +12,10 @@ import CoreData
 
 class ResturantTests: XCTestCase {
     func test_count_returnsValue() {
-        let request = Resturant.count()
-        XCTAssertNotNil(request)
+        CoreData.stack.setup(storeType: NSInMemoryStoreType) {
+            let request = Resturant.count()
+            XCTAssertNotNil(request)
+        }
     }
     
     func test_allResturants_returnsValue() {
@@ -59,5 +61,18 @@ class ResturantTests: XCTestCase {
         }
         
         XCTAssert(data.count == 0)
+    }
+    
+    func test_avgReview_producesZeroIfNoreviews() {
+        let name = "testResturant"
+        let type = ResturantType.allResturantTypes().first
+        
+        let new = Resturant.createResturant(name: name, type: type!)
+        
+        XCTAssert(new.avgReview() == 0)
+        
+        // cleanup
+        new.delete()
+        CoreData.stack.save()
     }
 }

@@ -46,17 +46,23 @@ public class Resturant: NSManagedObject, Identifiable {
         CoreData.stack.context.delete(self)
     }
     
-    #if DEBUG
-    class func preview() -> Resturant {
-        let items = Resturant.allResturants()
+    // there might be a better way to do this in CoreData
+    // but this is super simple
+    public func avgReview() -> Int {
+        let reviews = CoreDataSource<Review>(predicateKey: "resturant")
+                        .loadDataSource(relatedTo: self)
+        var total = 0
         
-        if items.count > 0 {
-            return items.first!
+        for review in reviews {
+            total += Int(review.rating)
+        }
+        
+        if (reviews.count == 0) {
+            return 0
         } else {
-            return Resturant.createResturant(name: "Preview Restuarnt", type: ResturantType.createResturantType(resturantType: "previewType"))
+            return total/reviews.count
         }
     }
-    #endif
 }
 
 extension Resturant {

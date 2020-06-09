@@ -23,7 +23,7 @@ struct ResturantDetailView: View {
         NavigationView {
             VStack {
                 HStack {
-                    Text("ave")
+                    Text("\(self.resturant.avgReview().description)")
                     
                     Spacer()
                     
