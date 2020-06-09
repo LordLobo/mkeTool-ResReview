@@ -22,7 +22,7 @@ struct AvgStar: View {
                 .frame(width: 75, height: 75)
             Text("\(String(format: "%.1f", self.rating))")
                 .font(Font.system(size: 13))
-                
+                .offset(y: 2)
         }
     }
 }

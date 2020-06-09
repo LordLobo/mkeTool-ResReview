@@ -24,6 +24,7 @@
 		936ED7652490061200DE1631 /* MultilineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED7642490061200DE1631 /* MultilineTextField.swift */; };
 		936ED76724900BB700DE1631 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED76624900BB700DE1631 /* ViewExtensions.swift */; };
 		936ED76924900C5F00DE1631 /* AvgStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED76824900C5F00DE1631 /* AvgStar.swift */; };
+		936ED76B249019AF00DE1631 /* EditResturantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED76A249019AF00DE1631 /* EditResturantView.swift */; };
 		93AD6B7D2489ACFC002E810C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AD6B7C2489ACFC002E810C /* AppDelegate.swift */; };
 		93AD6B7F2489ACFC002E810C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AD6B7E2489ACFC002E810C /* SceneDelegate.swift */; };
 		93AD6B822489ACFC002E810C /* mkeTool_ResReview.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 93AD6B802489ACFC002E810C /* mkeTool_ResReview.xcdatamodeld */; };
@@ -61,7 +62,8 @@
 		936ED7642490061200DE1631 /* MultilineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextField.swift; sourceTree = "<group>"; };
 		936ED76624900BB700DE1631 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
 		936ED76824900C5F00DE1631 /* AvgStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvgStar.swift; sourceTree = "<group>"; };
-		93AD6B792489ACFC002E810C /* mkeTool-ResReview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mkeTool-ResReview.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		936ED76A249019AF00DE1631 /* EditResturantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditResturantView.swift; sourceTree = "<group>"; };
+		93AD6B792489ACFC002E810C /* Resturant Review.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Resturant Review.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93AD6B7C2489ACFC002E810C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93AD6B7E2489ACFC002E810C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		93AD6B812489ACFC002E810C /* mkeTool_ResReview.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = mkeTool_ResReview.xcdatamodel; sourceTree = "<group>"; };
@@ -115,7 +117,7 @@
 		93AD6B7A2489ACFC002E810C /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				93AD6B792489ACFC002E810C /* mkeTool-ResReview.app */,
+				93AD6B792489ACFC002E810C /* Resturant Review.app */,
 				93AD6B922489ACFF002E810C /* mkeTool-ResReviewTests.xctest */,
 			);
 			name = Products;
@@ -186,6 +188,7 @@
 				936ED75B248FC9F300DE1631 /* ResturantDetailView.swift */,
 				936ED757248ECEF100DE1631 /* ResturantRow.swift */,
 				936ED75D248FCD3D00DE1631 /* ReviewRow.swift */,
+				936ED76A249019AF00DE1631 /* EditResturantView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -207,7 +210,7 @@
 			);
 			name = "mkeTool-ResReview";
 			productName = "mkeTool-ResReview";
-			productReference = 93AD6B792489ACFC002E810C /* mkeTool-ResReview.app */;
+			productReference = 93AD6B792489ACFC002E810C /* Resturant Review.app */;
 			productType = "com.apple.product-type.application";
 		};
 		93AD6B912489ACFF002E810C /* mkeTool-ResReviewTests */ = {
@@ -291,6 +294,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				936ED76B249019AF00DE1631 /* EditResturantView.swift in Sources */,
 				93AD6B7D2489ACFC002E810C /* AppDelegate.swift in Sources */,
 				936ED730248E991200DE1631 /* ResturantType.swift in Sources */,
 				936ED740248EAE0000DE1631 /* Resturant.swift in Sources */,
@@ -472,7 +476,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lordlobo.mkeTool-ResReview";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Resturant Review";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -492,7 +496,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lordlobo.mkeTool-ResReview";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Resturant Review";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -516,7 +520,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mkeTool-ResReview.app/mkeTool-ResReview";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Resturant Review.app/Resturant Review";
 			};
 			name = Debug;
 		};
@@ -538,7 +542,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mkeTool-ResReview.app/mkeTool-ResReview";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Resturant Review.app/Resturant Review";
 			};
 			name = Release;
 		};

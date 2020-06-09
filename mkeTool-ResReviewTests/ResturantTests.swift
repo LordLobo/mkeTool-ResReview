@@ -8,7 +8,7 @@
 
 import XCTest
 import CoreData
-@testable import mkeTool_ResReview
+@testable import Resturant_Review
 
 class ResturantTests: XCTestCase {
     func test_count_returnsValue() {
@@ -88,6 +88,28 @@ class ResturantTests: XCTestCase {
         print(new.avgReview())
         
         XCTAssert(new.avgReview() == 2.75)
+        
+        // cleanup
+        new.delete()
+        CoreData.stack.save()
+    }
+    
+    // this isn't a great test because it really just 'tests core data'
+    // however I wasn't totally sure this would 'just work'
+    func test_editResturaunt_changesData() {
+        let name = "testResturant"
+        let type = ResturantType.allResturantTypes().first
+        
+        let new = Resturant.createResturant(name: name, type: type!)
+        
+        CoreData.stack.save()
+        
+        let newName = "newName"
+        new.name = newName
+        
+        CoreData.stack.save()
+        
+        XCTAssert(new.name == newName)
         
         // cleanup
         new.delete()

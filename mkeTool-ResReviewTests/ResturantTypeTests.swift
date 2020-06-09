@@ -8,7 +8,7 @@
 
 import XCTest
 import CoreData
-@testable import mkeTool_ResReview
+@testable import Resturant_Review
 
 class ResturantTypeTests: XCTestCase {
     func test_count_returnsSeededValue() {

@@ -13,7 +13,10 @@ struct ResturantDetailView: View {
     
     @ObservedObject private var dataSource = CoreDataSource<Review>(predicateKey: "resturant")
     
-    @State private var showAddSheet = false
+    @State private var showAddReview = false
+    @State private var showEditResturant = false
+    @State private var showActionSheet = false
+    
     
     init(_ resturant: Resturant) {
         self.resturant = resturant
@@ -49,9 +52,21 @@ struct ResturantDetailView: View {
                 .onAppear{ self.dataSource.loadDataSource() }
                 .navigationBarTitle(Text("\(self.resturant.name!) (\(self.resturant.reviews!.count.description))"), displayMode: .large)
                 .navigationBarItems(trailing:
+                    
                     HStack {
                         Button(action: {
-                            self.showAddSheet.toggle()
+                            self.showEditResturant = true
+                            self.showAddReview = false
+                            self.showActionSheet.toggle()
+                        }) {
+                            Text("Edit")
+                        }
+                        .padding(.trailing, 30)
+                        
+                        Button(action: {
+                            self.showEditResturant = false
+                            self.showAddReview = true
+                            self.showActionSheet.toggle()
                         }) {
                             Text("Add Review")
                         }
@@ -61,8 +76,14 @@ struct ResturantDetailView: View {
             .frame(width: geo.size.width * 0.95)
             .background(Color("RtBg"))
             .cornerRadius(6)
-            .sheet(isPresented: self.$showAddSheet) {
-                AddReviewView(self.resturant)
+            .sheet(isPresented: self.$showActionSheet) {
+                if (self.showAddReview) {
+                    AddReviewView(self.resturant)
+                }
+                
+                if (self.showEditResturant) {
+                    EditResturantView(self.resturant)
+                }
             }
             .onAppear {
                 UITableView.appearance().separatorStyle = .none
@@ -73,10 +94,10 @@ struct ResturantDetailView: View {
 
 struct ResturantDetailView_Previews: PreviewProvider {
     static var previews: some View {
-         let context = CoreData.stack.context
-               let resturant = Resturant.createResturant(name: "Test Resturant", type: ResturantType.createResturantType(resturantType: "TestCuisine"))
-               
-               return ResturantDetailView(resturant)
-                        .environment(\.managedObjectContext, context)
+        let context = CoreData.stack.context
+        let resturant = Resturant.createResturant(name: "Test Resturant", type: ResturantType.createResturantType(resturantType: "TestCuisine"))
+
+        return ResturantDetailView(resturant)
+                    .environment(\.managedObjectContext, context)
     }
 }
