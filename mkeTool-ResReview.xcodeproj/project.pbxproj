@@ -20,6 +20,10 @@
 		936ED75C248FC9F300DE1631 /* ResturantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED75B248FC9F300DE1631 /* ResturantDetailView.swift */; };
 		936ED75E248FCD3D00DE1631 /* ReviewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED75D248FCD3D00DE1631 /* ReviewRow.swift */; };
 		936ED760248FD7E700DE1631 /* AddReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED75F248FD7E700DE1631 /* AddReviewView.swift */; };
+		936ED7632490045400DE1631 /* HorizontalLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED7622490045400DE1631 /* HorizontalLine.swift */; };
+		936ED7652490061200DE1631 /* MultilineTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED7642490061200DE1631 /* MultilineTextField.swift */; };
+		936ED76724900BB700DE1631 /* ViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED76624900BB700DE1631 /* ViewExtensions.swift */; };
+		936ED76924900C5F00DE1631 /* AvgStar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED76824900C5F00DE1631 /* AvgStar.swift */; };
 		93AD6B7D2489ACFC002E810C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AD6B7C2489ACFC002E810C /* AppDelegate.swift */; };
 		93AD6B7F2489ACFC002E810C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AD6B7E2489ACFC002E810C /* SceneDelegate.swift */; };
 		93AD6B822489ACFC002E810C /* mkeTool_ResReview.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 93AD6B802489ACFC002E810C /* mkeTool_ResReview.xcdatamodeld */; };
@@ -53,6 +57,10 @@
 		936ED75B248FC9F300DE1631 /* ResturantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantDetailView.swift; sourceTree = "<group>"; };
 		936ED75D248FCD3D00DE1631 /* ReviewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRow.swift; sourceTree = "<group>"; };
 		936ED75F248FD7E700DE1631 /* AddReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewView.swift; sourceTree = "<group>"; };
+		936ED7622490045400DE1631 /* HorizontalLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalLine.swift; sourceTree = "<group>"; };
+		936ED7642490061200DE1631 /* MultilineTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilineTextField.swift; sourceTree = "<group>"; };
+		936ED76624900BB700DE1631 /* ViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtensions.swift; sourceTree = "<group>"; };
+		936ED76824900C5F00DE1631 /* AvgStar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvgStar.swift; sourceTree = "<group>"; };
 		93AD6B792489ACFC002E810C /* mkeTool-ResReview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mkeTool-ResReview.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93AD6B7C2489ACFC002E810C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93AD6B7E2489ACFC002E810C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +92,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		936ED7612490044500DE1631 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				936ED7622490045400DE1631 /* HorizontalLine.swift */,
+				936ED7642490061200DE1631 /* MultilineTextField.swift */,
+				936ED76624900BB700DE1631 /* ViewExtensions.swift */,
+				936ED76824900C5F00DE1631 /* AvgStar.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		93AD6B702489ACFC002E810C = {
 			isa = PBXGroup;
 			children = (
@@ -160,12 +179,13 @@
 		93AD6BA32489AD45002E810C /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				93AD6B832489ACFC002E810C /* ContentView.swift */,
-				936ED757248ECEF100DE1631 /* ResturantRow.swift */,
+				936ED7612490044500DE1631 /* Util */,
 				936ED759248ECF1400DE1631 /* AddResturantView.swift */,
-				936ED75B248FC9F300DE1631 /* ResturantDetailView.swift */,
-				936ED75D248FCD3D00DE1631 /* ReviewRow.swift */,
 				936ED75F248FD7E700DE1631 /* AddReviewView.swift */,
+				93AD6B832489ACFC002E810C /* ContentView.swift */,
+				936ED75B248FC9F300DE1631 /* ResturantDetailView.swift */,
+				936ED757248ECEF100DE1631 /* ResturantRow.swift */,
+				936ED75D248FCD3D00DE1631 /* ReviewRow.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -274,7 +294,9 @@
 				93AD6B7D2489ACFC002E810C /* AppDelegate.swift in Sources */,
 				936ED730248E991200DE1631 /* ResturantType.swift in Sources */,
 				936ED740248EAE0000DE1631 /* Resturant.swift in Sources */,
+				936ED76924900C5F00DE1631 /* AvgStar.swift in Sources */,
 				936ED72C248E949200DE1631 /* CoreData.swift in Sources */,
+				936ED7632490045400DE1631 /* HorizontalLine.swift in Sources */,
 				936ED760248FD7E700DE1631 /* AddReviewView.swift in Sources */,
 				936ED75E248FCD3D00DE1631 /* ReviewRow.swift in Sources */,
 				936ED750248EB60100DE1631 /* Review.swift in Sources */,
@@ -282,9 +304,11 @@
 				936ED75C248FC9F300DE1631 /* ResturantDetailView.swift in Sources */,
 				936ED72E248E95AA00DE1631 /* CoreDataSource.swift in Sources */,
 				936ED75A248ECF1400DE1631 /* AddResturantView.swift in Sources */,
+				936ED76724900BB700DE1631 /* ViewExtensions.swift in Sources */,
 				93AD6B842489ACFC002E810C /* ContentView.swift in Sources */,
 				93AD6B7F2489ACFC002E810C /* SceneDelegate.swift in Sources */,
 				936ED758248ECEF100DE1631 /* ResturantRow.swift in Sources */,
+				936ED7652490061200DE1631 /* MultilineTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

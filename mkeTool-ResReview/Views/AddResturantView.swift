@@ -17,25 +17,40 @@ struct AddResturantView: View {
     let types = ResturantType.allResturantTypes()
     		
     var body: some View {
-        VStack {
-            Text("Add Resturaunt")
-            
-            TextField("Resturant Name", text: self.$name)
-            
-            Picker("Cuisine Type", selection: self.$type) {
-                ForEach(self.types, id: \.resturantType) { pickType in
-                    Text("\(pickType.resturantType!)").tag(pickType.resturantType!)
+        GeometryReader { geo in
+            VStack {
+                Text("Add Resturaunt")
+                
+                HorizontalLine(color: Color.gray, height: 4)
+                
+                TextField("Resturant Name", text: self.$name)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                
+                Picker("Cuisine", selection: self.$type) {
+                    ForEach(self.types, id: \.resturantType) { pickType in
+                        Text("\(pickType.resturantType!)").tag(pickType.resturantType!)
+                    }
+                }
+                
+                HorizontalLine(color: Color.gray, height: 4)
+                
+                HStack {
+                    Spacer()
+                    
+                    Button(action:{ self.cancelAction() }) { Text("Cancel") }
+                    
+                    Spacer()
+                    
+                    Button(action:{ self.saveAction() }) { Text("Save") }
+                        .disabled(!self.dirty())
+                    
+                    Spacer()
                 }
             }
-            
-            HStack {
-                Button(action:{ self.cancelAction() }) { Text("Cancel") }
-                
-                Spacer()
-                
-                Button(action:{ self.saveAction() }) { Text("Save") }
-                    .disabled(!self.dirty())
-            }
+            .padding(5)
+            .frame(width: geo.size.width * 0.97)
+            .background(Color("RtBg"))
+            .cornerRadius(6)
         }
     }
     

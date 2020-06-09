@@ -20,42 +20,53 @@ struct ResturantDetailView: View {
     }
     
     var body: some View {
-        NavigationView {
-            VStack {
-                HStack {
-                    Text("\(self.resturant.avgReview().description)")
-                    
-                    Spacer()
-                    
-                    VStack {
-                        Text("\(self.resturant.name!)")
+        GeometryReader { geo in
+            NavigationView {
+                VStack {
+                    HStack {
+                        HStack {
+                            AvgStar(self.resturant.avgReview())
+                            Text("avg").padding(.leading, -10)
+                        }
+                        .padding(.leading)
                         
-                        Text("\(self.resturant.type!.resturantType!)")
+                        Spacer()
+                        
+                        VStack {
+                            Text("\(self.resturant.type!.resturantType!)")
+                        }
+                        
+                        Spacer()
                     }
                     
-                    Spacer()
-                }
-                
-                List {
-                    ForEach(dataSource.loadDataSource(relatedTo: resturant), id:\.self){ review in
-                        ReviewRow(review)
+                    List {
+                        ForEach(self.dataSource.loadDataSource(relatedTo: self.resturant), id:\.self){ review in
+                            ReviewRow(review)
+                        }
                     }
+                    
                 }
-                
+                .onAppear{ self.dataSource.loadDataSource() }
+                .navigationBarTitle(Text("\(self.resturant.name!) (\(self.resturant.reviews!.count.description))"), displayMode: .large)
+                .navigationBarItems(trailing:
+                    HStack {
+                        Button(action: {
+                            self.showAddSheet.toggle()
+                        }) {
+                            Text("Add Review")
+                        }
+                    })
             }
-            .onAppear{ self.dataSource.loadDataSource() }
-            .navigationBarTitle(Text("\(self.resturant.name!)"), displayMode: .large)
-            .navigationBarItems(trailing:
-                HStack {
-                    Button(action: {
-                        self.showAddSheet.toggle()
-                    }) {
-                        Image(systemName: "plus")
-                    }
-                })
-        }
-        .sheet(isPresented: self.$showAddSheet) {
-            AddReviewView(self.resturant)
+            .padding(5)
+            .frame(width: geo.size.width * 0.95)
+            .background(Color("RtBg"))
+            .cornerRadius(6)
+            .sheet(isPresented: self.$showAddSheet) {
+                AddReviewView(self.resturant)
+            }
+            .onAppear {
+                UITableView.appearance().separatorStyle = .none
+            }
         }
     }
 }

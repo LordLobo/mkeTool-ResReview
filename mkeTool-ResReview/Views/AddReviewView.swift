@@ -19,86 +19,102 @@ struct AddReviewView: View {
     
     init(_ resturant: Resturant) {
         self.resturant = resturant
-    }
-    
+    }    
     
     var body: some View {
-        VStack {
-            HStack {
-                Text("ave")
-                
-                Spacer()
-                
-                VStack {
-                    Text("\(self.resturant.name!)")
+        GeometryReader { geo in
+            VStack {
+                HStack {
+                    HStack {
+                        AvgStar(self.resturant.avgReview())
+                        Text("avg").padding(.leading, -10)
+                    }
                     
-                    Text("\(self.resturant.type!.resturantType!)")
-                }
-                
-                Spacer()
-            }
-            
-            DatePicker(selection: self.$reviewDate, displayedComponents: .date) {
-                Text("Date")
-            }
-            
-            HStack {
-                Image(systemName: self.score > 0 ? "star.fill" : "star")
-                    .resizable()
-                    .frame(width: 50, height: 50)
-                    .padding(.trailing, 10)
-                    .onTapGesture { self.score = self.score == 1 ? 0 : 1 }
-                
-                Image(systemName: self.score > 1 ? "star.fill" : "star")
-                    .resizable()
-                    .frame(width: 50, height: 50)
-                    .padding(.trailing, 10)
-                    .onTapGesture { self.score = self.score == 2 ? 1 : 2 }
-                
-                Image(systemName: self.score > 2 ? "star.fill" : "star")
-                    .resizable()
-                    .frame(width: 50, height: 50)
-                    .padding(.trailing, 10)
-                    .onTapGesture { self.score = self.score == 3 ? 2 : 3 }
-                
-                Image(systemName: self.score > 3 ? "star.fill" : "star")
-                    .resizable()
-                    .frame(width: 50, height: 50)
-                    .padding(.trailing, 10)
-                    .onTapGesture { self.score = self.score == 4 ? 3 : 4 }
-                
-                Image(systemName: self.score > 4 ? "star.fill" : "star")
-                    .resizable()
-                    .frame(width: 50, height: 50)
-                    .onTapGesture { self.score = self.score == 5 ? 4 : 5 }
-            }
+                    Spacer()
+                    
+                    VStack {
+                        Text("\(self.resturant.name!)")
+                            .font(Font.system(size: 21.0, weight: .bold))
                         
-            Spacer()
-            
-            TextField("Review", text: self.$reviewText)
-            
-            Spacer()
-            
-            HStack {
+                        Text("\(self.resturant.type!.resturantType!)")
+                            .font(Font.system(size: 14))
+                    }
+                    
+                    Spacer()
+                }
+                
+                HorizontalLine(color: Color.gray, height: 3)
+                
+                DatePicker(selection: self.$reviewDate, displayedComponents: .date) {
+                    Text("Date")
+                }
+                
+                HStack {
+                    Image(systemName: self.score > 0 ? "star.fill" : "star")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .padding(.trailing, 10)
+                        .onTapGesture { self.score = self.score == 1 ? 0 : 1 }
+                    
+                    Image(systemName: self.score > 1 ? "star.fill" : "star")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .padding(.trailing, 10)
+                        .onTapGesture { self.score = self.score == 2 ? 1 : 2 }
+                    
+                    Image(systemName: self.score > 2 ? "star.fill" : "star")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .padding(.trailing, 10)
+                        .onTapGesture { self.score = self.score == 3 ? 2 : 3 }
+                    
+                    Image(systemName: self.score > 3 ? "star.fill" : "star")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .padding(.trailing, 10)
+                        .onTapGesture { self.score = self.score == 4 ? 3 : 4 }
+                    
+                    Image(systemName: self.score > 4 ? "star.fill" : "star")
+                        .resizable()
+                        .frame(width: 50, height: 50)
+                        .onTapGesture { self.score = self.score == 5 ? 4 : 5 }
+                }
+                
+                HorizontalLine(color: Color.gray, height: 3)
+                
+                MultilineTextField("Review", text: self.$reviewText)
+                    .overlay(RoundedRectangle(cornerRadius: 5).stroke(Color.gray))
+                
                 Spacer()
                 
-                Button(action: {
-                    self.saveReview()
-                }) {
-                    Text("Cancel")
-                }
+                HStack {
+                    Spacer()
                     
-                Spacer()
+                    Button(action: {
+                        self.saveReview()
+                    }) {
+                        Text("Cancel")
+                    }
+                        
+                    Spacer()
+                        
+                    Button(action: {
+                        self.saveReview()
+                    }) {
+                        Text("Save")
+                    }
+                    .disabled(!self.dirty())
                     
-                Button(action: {
-                    self.saveReview()
-                }) {
-                    Text("Save")
+                    Spacer()
                 }
-                .disabled(!self.dirty())
                 
                 Spacer()
             }
+            .padding(5)
+            .frame(width: geo.size.width * 0.95)
+            .background(Color("RtBg"))
+            .cornerRadius(6)
+            .simultaneousGesture(TapGesture().onEnded { _ in self.endEditing() } )
         }
     }
     

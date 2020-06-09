@@ -12,10 +12,8 @@ import CoreData
 
 class ResturantTests: XCTestCase {
     func test_count_returnsValue() {
-        CoreData.stack.setup(storeType: NSInMemoryStoreType) {
-            let request = Resturant.count()
-            XCTAssertNotNil(request)
-        }
+        let request = Resturant.count()
+        XCTAssertNotNil(request)
     }
     
     func test_allResturants_returnsValue() {
@@ -70,6 +68,26 @@ class ResturantTests: XCTestCase {
         let new = Resturant.createResturant(name: name, type: type!)
         
         XCTAssert(new.avgReview() == 0)
+        
+        // cleanup
+        new.delete()
+        CoreData.stack.save()
+    }
+    
+    func test_avgReview_producesAverageScoreOfReviews() {
+        let name = "testResturant"
+        let type = ResturantType.allResturantTypes().first
+        
+        let new = Resturant.createResturant(name: name, type: type!)
+        
+        _ = Review.createReviewFor(new, text: "", rating: 5, date: Date.init())
+        _ = Review.createReviewFor(new, text: "", rating: 3, date: Date.init())
+        _ = Review.createReviewFor(new, text: "", rating: 2, date: Date.init())
+        _ = Review.createReviewFor(new, text: "", rating: 1, date: Date.init())
+        
+        print(new.avgReview())
+        
+        XCTAssert(new.avgReview() == 2.75)
         
         // cleanup
         new.delete()

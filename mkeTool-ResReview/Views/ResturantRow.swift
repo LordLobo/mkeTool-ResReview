@@ -17,20 +17,24 @@ struct ResturantRow: View {
     
     var body: some View {
         HStack {
-            Text("ave")
+            AvgStar(self.resturant.avgReview())            
             
-            Spacer()
-            
-            VStack {
-                Text("\(self.resturant.name!)")
+            VStack(alignment: .leading) {
+                Text("\(self.resturant.name ?? "")")
+                    .font(Font.system(size: 21.0, weight: .bold))
                 
-                Text("\(self.resturant.type!.resturantType!)")
+                Text("\(self.resturant.type!.resturantType ?? "")")
+                    .font(Font.system(size: 14))
             }
             
             Spacer()
             
             Text("\(self.resturant.reviews!.count)")
+                .padding(.trailing)
         }
+        .padding(5)
+        .background(Color("RtBg"))
+        .cornerRadius(6)
     }
 }
 

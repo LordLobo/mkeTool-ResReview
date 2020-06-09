@@ -48,7 +48,7 @@ public class Resturant: NSManagedObject, Identifiable {
     
     // there might be a better way to do this in CoreData
     // but this is super simple
-    public func avgReview() -> Int {
+    public func avgReview() -> Double {
         let reviews = CoreDataSource<Review>(predicateKey: "resturant")
                         .loadDataSource(relatedTo: self)
         var total = 0
@@ -60,7 +60,7 @@ public class Resturant: NSManagedObject, Identifiable {
         if (reviews.count == 0) {
             return 0
         } else {
-            return total/reviews.count
+            return Double(total) / Double(reviews.count)
         }
     }
 }

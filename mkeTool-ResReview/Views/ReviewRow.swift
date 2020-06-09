@@ -15,18 +15,18 @@ struct ReviewRow: View {
         self.review = review
     }
     
+    static let dateFormat: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .long
+        return formatter
+    }()
+    
     var body: some View {
         VStack {
-            Text("\(self.review.date!)")
+            Text("\(self.review.date!, formatter: Self.dateFormat)")
             
             HStack {
-                ZStack {
-                    Image(systemName: "star")
-                        .resizable()
-                        .frame(width: 75, height: 75)
-                    
-                    Text("\(self.review.rating.description)")
-                }
+                AvgStar(Double(self.review.rating))
                 
                 Spacer()
                 
@@ -34,6 +34,9 @@ struct ReviewRow: View {
                     .multilineTextAlignment(.leading)
             }
         }
+        .padding(5)
+        .background(Color("RtBg"))
+        .cornerRadius(6)
     }
 }
 
