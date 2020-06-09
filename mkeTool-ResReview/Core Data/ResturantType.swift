@@ -12,12 +12,18 @@ import CoreData
 @objc(ResturantType)
 public class ResturantType: NSManagedObject, Identifiable {
     class func count() -> Int {
-        let data = CoreDataSource<ResturantType>()
-        return data.fetch().count
+        let fetchRequest: NSFetchRequest<ResturantType> = ResturantType.fetchRequest()
+        
+        do {
+            let count = try CoreData.stack.context.count(for: fetchRequest)
+            return count
+        } catch let error as NSError {
+            fatalError("Unresolved error \(error), \(error.userInfo)")
+        }
     }
     
     class func allResturantTypes() -> [ResturantType] {
-        let data = CoreDataSource<ResturantType>()
+        let data = CoreDataSource<ResturantType>(sort: "resturantType")
         return data.fetch()
     }
     

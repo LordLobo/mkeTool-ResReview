@@ -15,6 +15,11 @@
 		936ED742248EAF0200DE1631 /* ResturantTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED741248EAF0200DE1631 /* ResturantTests.swift */; };
 		936ED750248EB60100DE1631 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED74F248EB60100DE1631 /* Review.swift */; };
 		936ED752248EB88C00DE1631 /* ReviewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED751248EB88C00DE1631 /* ReviewTests.swift */; };
+		936ED758248ECEF100DE1631 /* ResturantRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED757248ECEF100DE1631 /* ResturantRow.swift */; };
+		936ED75A248ECF1400DE1631 /* AddResturantView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED759248ECF1400DE1631 /* AddResturantView.swift */; };
+		936ED75C248FC9F300DE1631 /* ResturantDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED75B248FC9F300DE1631 /* ResturantDetailView.swift */; };
+		936ED75E248FCD3D00DE1631 /* ReviewRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED75D248FCD3D00DE1631 /* ReviewRow.swift */; };
+		936ED760248FD7E700DE1631 /* AddReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 936ED75F248FD7E700DE1631 /* AddReviewView.swift */; };
 		93AD6B7D2489ACFC002E810C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AD6B7C2489ACFC002E810C /* AppDelegate.swift */; };
 		93AD6B7F2489ACFC002E810C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93AD6B7E2489ACFC002E810C /* SceneDelegate.swift */; };
 		93AD6B822489ACFC002E810C /* mkeTool_ResReview.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 93AD6B802489ACFC002E810C /* mkeTool_ResReview.xcdatamodeld */; };
@@ -43,6 +48,11 @@
 		936ED741248EAF0200DE1631 /* ResturantTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantTests.swift; sourceTree = "<group>"; };
 		936ED74F248EB60100DE1631 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		936ED751248EB88C00DE1631 /* ReviewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewTests.swift; sourceTree = "<group>"; };
+		936ED757248ECEF100DE1631 /* ResturantRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantRow.swift; sourceTree = "<group>"; };
+		936ED759248ECF1400DE1631 /* AddResturantView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddResturantView.swift; sourceTree = "<group>"; };
+		936ED75B248FC9F300DE1631 /* ResturantDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResturantDetailView.swift; sourceTree = "<group>"; };
+		936ED75D248FCD3D00DE1631 /* ReviewRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewRow.swift; sourceTree = "<group>"; };
+		936ED75F248FD7E700DE1631 /* AddReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewView.swift; sourceTree = "<group>"; };
 		93AD6B792489ACFC002E810C /* mkeTool-ResReview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mkeTool-ResReview.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		93AD6B7C2489ACFC002E810C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		93AD6B7E2489ACFC002E810C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -151,6 +161,11 @@
 			isa = PBXGroup;
 			children = (
 				93AD6B832489ACFC002E810C /* ContentView.swift */,
+				936ED757248ECEF100DE1631 /* ResturantRow.swift */,
+				936ED759248ECF1400DE1631 /* AddResturantView.swift */,
+				936ED75B248FC9F300DE1631 /* ResturantDetailView.swift */,
+				936ED75D248FCD3D00DE1631 /* ReviewRow.swift */,
+				936ED75F248FD7E700DE1631 /* AddReviewView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -260,11 +275,16 @@
 				936ED730248E991200DE1631 /* ResturantType.swift in Sources */,
 				936ED740248EAE0000DE1631 /* Resturant.swift in Sources */,
 				936ED72C248E949200DE1631 /* CoreData.swift in Sources */,
+				936ED760248FD7E700DE1631 /* AddReviewView.swift in Sources */,
+				936ED75E248FCD3D00DE1631 /* ReviewRow.swift in Sources */,
 				936ED750248EB60100DE1631 /* Review.swift in Sources */,
 				93AD6B822489ACFC002E810C /* mkeTool_ResReview.xcdatamodeld in Sources */,
+				936ED75C248FC9F300DE1631 /* ResturantDetailView.swift in Sources */,
 				936ED72E248E95AA00DE1631 /* CoreDataSource.swift in Sources */,
+				936ED75A248ECF1400DE1631 /* AddResturantView.swift in Sources */,
 				93AD6B842489ACFC002E810C /* ContentView.swift in Sources */,
 				93AD6B7F2489ACFC002E810C /* SceneDelegate.swift in Sources */,
+				936ED758248ECEF100DE1631 /* ResturantRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

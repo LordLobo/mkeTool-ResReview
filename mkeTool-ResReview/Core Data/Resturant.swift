@@ -10,10 +10,16 @@ import Foundation
 import CoreData
 
 @objc(Resturant)
-public class Resturant: NSManagedObject {
+public class Resturant: NSManagedObject, Identifiable {
     class func count() -> Int {
-        let data = CoreDataSource<Resturant>()
-        return data.fetch().count
+        let fetchRequest: NSFetchRequest<Resturant> = Resturant.fetchRequest()
+        
+        do {
+            let count = try CoreData.stack.context.count(for: fetchRequest)
+            return count
+        } catch let error as NSError {
+            fatalError("Unresolved error \(error), \(error.userInfo)")
+        }
     }
     
     class func allResturants() -> [Resturant] {
@@ -39,6 +45,18 @@ public class Resturant: NSManagedObject {
     public func delete() {
         CoreData.stack.context.delete(self)
     }
+    
+    #if DEBUG
+    class func preview() -> Resturant {
+        let items = Resturant.allResturants()
+        
+        if items.count > 0 {
+            return items.first!
+        } else {
+            return Resturant.createResturant(name: "Preview Restuarnt", type: ResturantType.createResturantType(resturantType: "previewType"))
+        }
+    }
+    #endif
 }
 
 extension Resturant {

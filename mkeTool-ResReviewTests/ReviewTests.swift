@@ -32,8 +32,8 @@ class ReviewTests: XCTestCase {
         
         let revText = "is a dive"
         let myRating = 1
-        let new = Review.createReviewFor(dive, text: revText, rating: myRating)
-
+        let new = Review.createReviewFor(dive, text: revText, rating: myRating, date: Date.init())
+        
         XCTAssertNotNil(new)
         XCTAssert(new.review == revText)
         XCTAssert(new.rating == Int16(myRating))
@@ -49,7 +49,7 @@ class ReviewTests: XCTestCase {
         let dive = Resturant.createResturant(name: "testResturant",
                                              type: ResturantType.allResturantTypes().first!)
         
-        let new = Review.createReviewFor(dive, text: "is a dive", rating: 1)
+        let new = Review.createReviewFor(dive, text: "is a dive", rating: 1, date: Date.init())
         CoreData.stack.save()
         
         new.delete()

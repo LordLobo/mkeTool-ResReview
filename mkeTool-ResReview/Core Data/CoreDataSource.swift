@@ -20,7 +20,19 @@ class CoreDataSource<T: NSManagedObject>: NSObject, ObservableObject, NSFetchedR
     override init() {
         super.init()
         
-        self.sortKey1 = nil
+        self.sortKey1 = "name" // default - only for resturants
+        self.sortKey2 = nil
+        self.sectionNameKeyPath = nil
+        
+        self.predicate = nil
+        self.predicateKey = nil
+        self.predicateObject = nil
+    }
+    
+    init(sort: String) {
+        super.init()
+        
+        self.sortKey1 = sort
         self.sortKey2 = nil
         self.sectionNameKeyPath = nil
         
@@ -46,7 +58,7 @@ class CoreDataSource<T: NSManagedObject>: NSObject, ObservableObject, NSFetchedR
     init(predicateKey: String?) {
         super.init()
         
-        self.sortKey1 = nil
+        self.sortKey1 = "date" // we only use this to get revies
         self.sortKey2 = nil
         self.sectionNameKeyPath = nil
         
@@ -280,25 +292,25 @@ class CoreDataSource<T: NSManagedObject>: NSObject, ObservableObject, NSFetchedR
                            didChange anObject: Any,
                            at indexPath: IndexPath?,
                            for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
-        let object = anObject as! NSManagedObject
-        let name = object.value(forKey: "name")
+//        let object = anObject as! NSManagedObject
+//        let name = object.value(forKey: "name")
+//        
+//        var changeType: String
+//        
+//        switch type {
+//        case .insert:
+//            changeType = "inserted"
+//        case .delete:
+//            changeType = "deleted"
+//        case .move:
+//            changeType = "moved"
+//        case .update:
+//            changeType = "updated"
+//        default:
+//            changeType = "unknown"
+//        }
         
-        var changeType: String
-        
-        switch type {
-        case .insert:
-            changeType = "inserted"
-        case .delete:
-            changeType = "deleted"
-        case .move:
-            changeType = "moved"
-        case .update:
-            changeType = "updated"
-        default:
-            changeType = "unknown"
-        }
-        
-        print("Controller \(changeType): \(name!)")
+        //print("Controller \(changeType): \(name!)")
 //        self.objectWillChange.send()
 //        object.objectWillChange.send()
     }

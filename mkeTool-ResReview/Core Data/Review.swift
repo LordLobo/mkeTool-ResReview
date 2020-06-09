@@ -10,14 +10,20 @@ import Foundation
 import CoreData
 
 @objc(Review)
-public class Review: NSManagedObject {
+public class Review: NSManagedObject, Identifiable {
     class func count() -> Int {
-        let data = CoreDataSource<Review>()
-        return data.fetch().count
+        let fetchRequest: NSFetchRequest<Review> = Review.fetchRequest()
+        
+        do {
+            let count = try CoreData.stack.context.count(for: fetchRequest)
+            return count
+        } catch let error as NSError {
+            fatalError("Unresolved error \(error), \(error.userInfo)")
+        }
     }
     
     class func allReviews() -> [Review] {
-        let data = CoreDataSource<Review>()
+        let data = CoreDataSource<Review>(sort: "date")
         return data.fetch()
     }
     
@@ -25,12 +31,12 @@ public class Review: NSManagedObject {
         return Review(context: CoreData.stack.context)
     }
     
-    class func createReviewFor(_ resturant: Resturant, text: String, rating: Int) -> Review {
+    class func createReviewFor(_ resturant: Resturant, text: String, rating: Int, date: Date) -> Review {
         let new = Review.newReview()
         new.review = text
         new.rating = Int16(rating)
         new.resturant = resturant
-        new.date = Date.init()
+        new.date = date
         
         CoreData.stack.save()
         

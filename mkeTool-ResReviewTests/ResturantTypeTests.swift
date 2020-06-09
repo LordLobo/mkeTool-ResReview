@@ -21,8 +21,8 @@ class ResturantTypeTests: XCTestCase {
         let data = ResturantType.allResturantTypes()
 
         XCTAssertNotNil(data)
-        XCTAssert(data[0].resturantType == "Italian")
-        XCTAssert(data[1].resturantType == "Chinese")
+        XCTAssert(data[0].resturantType == "Chinese")
+        XCTAssert(data[1].resturantType == "Italian")
         XCTAssert(data[2].resturantType == "Mexican")
     }
     
